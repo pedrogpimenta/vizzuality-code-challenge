@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.Button__Tooltip {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(26, 28, 34, 0.1) !important;
+  box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.1) !important;
+  border-radius: 4px !important;
+  color: #888888 !important; 
+}
+
+.Button__Tooltip.place-top::after {
+  border-top-color: #FFFFFF !important;
+  bottom: -9px !important;
+  border-top-width: 9px !important;
+  filter: drop-shadow(0 1px 0 rgba(26, 28, 34, 0.05));
+}
