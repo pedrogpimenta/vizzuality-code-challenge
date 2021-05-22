@@ -14,6 +14,34 @@ class App extends React.Component {
     this.onChangeCollapse = this.onChangeCollapse.bind(this)
   }
 
+  onChangeVisibility(itemId) {
+    const newLegendItems = this.state.legendItems.map((item) => {
+      if (item.id === itemId) {
+        item.visibility = !item.visibility
+      }
+
+      return item
+    })
+
+    this.setState({
+      legendItems: newLegendItems,
+    })
+  }
+
+  onChangeCollapse(itemId) {
+    const newLegendItems = this.state.legendItems.map((item) => {
+      if (item.id === itemId) {
+        item.collapse = !item.collapse
+      }
+
+      return item
+    })
+
+    this.setState({
+      legendItems: newLegendItems,
+    })
+  }
+
   setLegendItems(items) {
     // TODO: also build timeline?
     // filter timeline
@@ -55,10 +83,15 @@ class App extends React.Component {
 
   render() {
     return (
-    <div className="App">
-      App
-      <Legend />
-    </div>
+      <div className="App w-screen h-screen p-10 bg-blue-100">
+        {this.state.legendItems.length > 0 &&
+          <Legend
+            items={this.state.legendItems}
+            onChangeVisibility={this.onChangeVisibility}
+            onChangeCollapse={this.onChangeCollapse}
+          />
+        }
+      </div>
     )
   }
 }
