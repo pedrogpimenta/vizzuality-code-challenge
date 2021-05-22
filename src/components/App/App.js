@@ -56,7 +56,8 @@ class App extends React.Component {
       )
     })
 
-    itemsForState[3] = {name:'iuygi uygiuy giuyg iuygiu ygiuyg iuygiu ygiuy giuyg iuyg ygiuyg iuygiuy giuyg'}
+    // TODO: remvoe fake element
+    itemsForState[3] = {id: 'asdufgoasidufygas', name:'iuygi uygiuy giuyg iuygiu ygiuyg iuygiu ygiuy giuyg iuyg ygiuyg iuygiuy giuyg'}
 
     this.setState({
       legendItems: itemsForState,

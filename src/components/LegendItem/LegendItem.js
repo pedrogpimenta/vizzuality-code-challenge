@@ -25,20 +25,23 @@ function LegendItem(props) {
         </div>
         <div className="LegendItemActions flex-none flex items-center gap-x-2">
           <Button 
+            id={'visibility'}
             icon={<Icon icon={visibility ? 'hide' : 'show'} />}
-            tooltipText={visibility ? 'Hide Layer' : 'Show Layer'}
+            dataTip={visibility ? 'Hide Layer' : 'Show Layer'}
             onClick={() => onChangeVisibility(id)}
           />
           <Button 
+            id={'info'}
             icon={<Icon icon={'info'} />}
-            tooltipText={'Layer Info'}
+            dataTip={'Layer Info'}
           />
           <Button 
+            id={'collapse'}
             icon={<Icon
               icon={'arrow-down'}
               transform={collapse ? 'rotate-180' : ''}
             />}
-            tooltipText={collapse ? 'Hide Layer' : 'Show Layer'}
+            dataTip={collapse ? 'Collapse' : 'Expand'}
             onClick={() => onChangeCollapse(id)}
           />
         </div>

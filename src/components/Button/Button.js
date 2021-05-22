@@ -1,14 +1,24 @@
-// import LegendItem from '../LegendItem/LegendItem'
-import Icon from '../Icon/Icon'
+import ReactTooltip from 'react-tooltip'
 
 function Button(props) {
   return (
-    <div
-      className="Button"
-      onClick={props.onClick}
-    >
-      {props.icon}
-    </div>
+    <>
+      <div
+        className="Button"
+        onClick={props.onClick}
+        data-tip={props.dataTip}
+        data-for={props.id}
+      >
+        {props.icon}
+      </div>
+      {props.dataTip &&
+        <ReactTooltip
+          id={props.id}
+          effect="solid"
+          className="Button__Tooltip"
+        />
+      }
+    </>
   )
 }
 
