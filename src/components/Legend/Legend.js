@@ -1,18 +1,35 @@
+import { SortableContainer } from 'react-sortable-hoc'
+
 import LegendItem from '../LegendItem/LegendItem'
+
+const SortableList = SortableContainer(({items, onChangeVisibility, onChangeCollapse}) => {
+  return (
+    <div className="Legend w-full max-w-lg">
+      {items.map((item, index) => (
+        <LegendItem
+          key={`item-${item.id}`}
+          index={index}
+          item={item}
+          content={item}
+          onChangeVisibility={onChangeVisibility}
+          onChangeCollapse={onChangeCollapse}
+        />
+      ))}
+    </div>
+  )
+})
 
 function Legend(props) {
   return (
-    // TODO: Replicate exact width?
-    <div className="Legend w-full max-w-lg">
-      {props.items.map((item) => 
-        <LegendItem
-          key={item.id}
-          content={item}
-          onChangeVisibility={props.onChangeVisibility}
-          onChangeCollapse={props.onChangeCollapse}
-        />
-      )}
-    </div>
+    <SortableList
+      axis='y'
+      lockAxis='y'
+      useDragHandle
+      items={props.items}
+      onChangeVisibility={props.onChangeVisibility}
+      onChangeCollapse={props.onChangeCollapse}
+      onSortEnd={props.onChangeOrder}
+    />
   )
 }
 

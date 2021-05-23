@@ -1,4 +1,5 @@
-import { Collapse } from 'react-collapse';
+import { Collapse } from 'react-collapse'
+import { SortableElement, SortableHandle } from 'react-sortable-hoc'
 
 import Icon from '../Icon/Icon'
 import Button from '../Button/Button'
@@ -6,7 +7,16 @@ import LegendGradient from '../LegendGradient/LegendGradient'
 import LegendChoropleth from '../LegendChoropleth/LegendChoropleth'
 import LegendBasic from '../LegendBasic/LegendBasic'
 
-function LegendItem(props) {
+const DragHandle = SortableHandle(() => (
+  <div className="LegendItemDrag flex-none flex items-center mr-1">
+    <Button 
+      id={'visibility'}
+      icon={<Icon icon={'drag'} />}
+    />
+  </div>
+));
+
+const LegendItem = SortableElement((props) => {
   const {
     id,
     name,
@@ -37,17 +47,11 @@ function LegendItem(props) {
   return (
     <div className="LegendItem bg-white border border-black border-opacity-10 border-b-0 last:border-b">
       <div className="LegendItemHeader flex pt-3.5 px-3 pb-3">
-        <div className="LegendItemDrag flex-none flex items-center mr-1">
-          <Button 
-            id={'visibility'}
-            icon={<Icon icon={'drag'} />}
-            // onClick={() => onChangeOrder()}
-          />
-        </div>
-        <div className="LegendItemTitle flex-auto flex items-center text-sm text-gray-650 font-semibold truncate">
+        <DragHandle />
+        <div className="LegendItemTitle flex-auto block items-center text-sm text-gray-650 font-semibold truncate">
           {name}
         </div>
-        <div className="LegendItemActions flex-none flex items-center gap-x-2">
+        <div className="LegendItemActions flex-none flex items-center gap-x-2 ml-1">
           <Button 
             id={'visibility'}
             icon={<Icon icon={visibility ? 'hide' : 'show'} />}
@@ -77,6 +81,6 @@ function LegendItem(props) {
       </Collapse>
     </div>
   )
-}
+})
 
 export default LegendItem

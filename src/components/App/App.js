@@ -12,6 +12,7 @@ class App extends React.Component {
 
     this.onChangeVisibility = this.onChangeVisibility.bind(this)
     this.onChangeCollapse = this.onChangeCollapse.bind(this)
+    this.onChangeOrder = this.onChangeOrder.bind(this)
   }
 
   onChangeVisibility(itemId) {
@@ -42,8 +43,19 @@ class App extends React.Component {
     })
   }
 
+  onChangeOrder(event) {
+    if (event.newIndex === event.oldIndex) return
+
+    const newLegendItems = this.state.legendItems
+    const itemToMove = newLegendItems.splice(event.oldIndex, 1)
+    newLegendItems.splice(event.newIndex, 0, itemToMove[0])
+
+    this.setState({
+      legendItems: newLegendItems,
+    })
+  }
+
   setLegendItems(items) {
-    // TODO: also build timeline?
     // filter timeline
     const filteredItems = items.filter((item) => item.type !== 'timeline')
 
@@ -81,12 +93,13 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="App w-full min-h-screen p-10 bg-blue-100">
+      <div className="App w-full min-h-screen p-5 bg-gray-680">
         {this.state.legendItems.length > 0 &&
           <Legend
             items={this.state.legendItems}
             onChangeVisibility={this.onChangeVisibility}
             onChangeCollapse={this.onChangeCollapse}
+            onChangeOrder={this.onChangeOrder}
           />
         }
       </div>
