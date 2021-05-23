@@ -2,7 +2,7 @@ import { SortableContainer } from 'react-sortable-hoc'
 
 import LegendItem from '../LegendItem/LegendItem'
 
-const SortableList = SortableContainer(({items, onChangeVisibility, onChangeCollapse}) => {
+const SortableList = SortableContainer(({items, onChangeVisibility, onChangeCollapse, onChangeInfo}) => {
   return (
     <div className="Legend w-full max-w-lg">
       {items.map((item, index) => (
@@ -13,6 +13,7 @@ const SortableList = SortableContainer(({items, onChangeVisibility, onChangeColl
           content={item}
           onChangeVisibility={onChangeVisibility}
           onChangeCollapse={onChangeCollapse}
+          onChangeInfo={onChangeInfo}
         />
       ))}
     </div>
@@ -28,6 +29,7 @@ function Legend(props) {
       items={props.items}
       onChangeVisibility={props.onChangeVisibility}
       onChangeCollapse={props.onChangeCollapse}
+      onChangeInfo={props.onChangeInfo}
       onSortEnd={props.onChangeOrder}
     />
   )

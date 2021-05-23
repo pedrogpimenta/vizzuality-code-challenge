@@ -1,5 +1,7 @@
 import React from 'react'
+
 import Legend from '../Legend/Legend'
+import Modal from '../Modal/Modal'
 
 class App extends React.Component {
   constructor() {
@@ -8,11 +10,14 @@ class App extends React.Component {
     this.state = {
       dataUrl: 'https://raw.githubusercontent.com/Vizzuality/front-end-code-challenge/master/data.json',
       legendItems: [],
+      isModalOpen: false,
+      modalContent: '',
     }
 
     this.onChangeVisibility = this.onChangeVisibility.bind(this)
     this.onChangeCollapse = this.onChangeCollapse.bind(this)
     this.onChangeOrder = this.onChangeOrder.bind(this)
+    this.onChangeInfo = this.onChangeInfo.bind(this)
   }
 
   onChangeVisibility(itemId) {
@@ -52,6 +57,14 @@ class App extends React.Component {
 
     this.setState({
       legendItems: newLegendItems,
+    })
+  }
+
+  onChangeInfo(itemId) {
+    console.log('change info', itemId)
+    this.setState({
+      isModalOpen: itemId,
+      modalContent: this.state.legendItems.find((item) => item.id === itemId)?.description,
     })
   }
 
@@ -100,8 +113,14 @@ class App extends React.Component {
             onChangeVisibility={this.onChangeVisibility}
             onChangeCollapse={this.onChangeCollapse}
             onChangeOrder={this.onChangeOrder}
+            onChangeInfo={this.onChangeInfo}
           />
         }
+        <Modal
+          isOpen={this.state.isModalOpen}
+          onChangeInfo={this.onChangeInfo}
+          content={this.state.modalContent}
+        />
       </div>
     )
   }

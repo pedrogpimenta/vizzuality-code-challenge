@@ -29,6 +29,7 @@ const LegendItem = SortableElement((props) => {
   const {
     onChangeVisibility,
     onChangeCollapse,
+    onChangeInfo,
   } = props
 
   const renderContent = (type) => {
@@ -62,6 +63,7 @@ const LegendItem = SortableElement((props) => {
             id={'info'}
             icon={<Icon icon={'info'} />}
             dataTip={'Layer Info'}
+            onClick={() => onChangeInfo(id)}
           />
           <Button 
             id={'collapse'}
