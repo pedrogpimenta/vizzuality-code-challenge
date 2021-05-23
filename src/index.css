@@ -14,7 +14,21 @@
   border-top-color: #FFFFFF !important;
   bottom: -9px !important;
   border-top-width: 9px !important;
-  filter: drop-shadow(0 1px 0 rgba(26, 28, 34, 0.05));
+  filter: drop-shadow(0 1px 0 rgba(26, 28, 34, 0.04));
+}
+
+.Button__Tooltip.place-left::after {
+  border-left-color: #FFFFFF !important;
+  right: -6px !important;
+  border-left-width: 6px !important;
+  filter: drop-shadow(1px 0 0 rgba(26, 28, 34, 0.04));
+}
+
+.Button__Tooltip.place-bottom::after {
+  border-bottom-color: #FFFFFF !important;
+  top: -8px !important;
+  border-bottom-width: 8px !important;
+  filter: drop-shadow(0 -1px 0 rgba(26, 28, 34, 0.08));
 }
 
 /* TODO: Use tailwind extend/apply ? */
