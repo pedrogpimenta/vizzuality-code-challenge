@@ -1,10 +1,13 @@
 import Icon from '../Icon/Icon'
 import Button from '../Button/Button'
+import LegendGradient from '../LegendGradient/LegendGradient'
 
 function LegendItem(props) {
   const {
     id,
     name,
+    type,
+    items,
     visibility,
     collapse,
   } = props.content
@@ -13,6 +16,15 @@ function LegendItem(props) {
     onChangeVisibility,
     onChangeCollapse,
   } = props
+
+  const renderContent = (type) => {
+    switch(type) {
+      case 'gradient':
+        return <LegendGradient items={items} />
+      default:
+        return null
+    }
+  }
 
   return (
     <div className="LegendItem bg-white">
@@ -46,7 +58,9 @@ function LegendItem(props) {
           />
         </div>
       </div>
-      <div className="LegendItemContent"></div>
+      <div className={`LegendItemContent`}>
+        {renderContent(type)}
+      </div>
     </div>
   )
 }
