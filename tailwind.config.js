@@ -15,7 +15,10 @@ module.exports = {
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      textAlign: ['first', 'last'],
+      borderWidth: ['first', 'last'],
+    },
   },
   plugins: [],
 }
