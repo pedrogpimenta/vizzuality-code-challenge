@@ -2,7 +2,7 @@ function LegendChoropleth(props) {
   const renderChoropleth = () => {
     return props.items.map((item, index) => {
       return (
-        <div className={`LegendChoropleth__item flex flex-col flex-auto text-center`}>
+        <div key={index} className={`LegendChoropleth__item flex flex-col flex-auto text-center`}>
           <div
             className={`LegendChoropleth__gradient flex-none h-2`}
             style={{

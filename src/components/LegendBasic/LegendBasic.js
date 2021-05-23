@@ -1,11 +1,10 @@
 function LegendBasic(props) {
   const renderBasic = () => {
     return props.items.map((item, index) => {
-
       return (
-        <div className={`LegendBasic__item flex flex-auto items-center`}>
+        <div key={index} className={`LegendBasic__item flex flex-auto items-center`}>
           <div
-            className={`LegendBasic__gradient w-3 h-3 mr-1.5 rounded-full`}
+            className={`LegendBasic__gradient flex-none w-3 h-3 mr-1.5 rounded-full`}
             style={{
               background: item.color,
             }}

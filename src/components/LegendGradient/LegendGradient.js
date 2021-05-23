@@ -51,8 +51,8 @@ function LegendGradient(props) {
       <div
         className={`LegendGradient__text flex w-full`}
       >
-        {props.items.map((item) => {
-          return <div className="flex-auto text-center py-1.5 text-xs text-gray-550 first:text-left last:text-right">{item.name}</div>
+        {props.items.map((item, index) => {
+          return <div key={index} className="flex-auto text-center py-1.5 text-xs text-gray-550 first:text-left last:text-right">{item.name}</div>
         })}
       </div>
     )
