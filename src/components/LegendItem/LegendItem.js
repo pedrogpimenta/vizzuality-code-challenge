@@ -1,3 +1,5 @@
+import { Collapse } from 'react-collapse';
+
 import Icon from '../Icon/Icon'
 import Button from '../Button/Button'
 import LegendGradient from '../LegendGradient/LegendGradient'
@@ -68,9 +70,11 @@ function LegendItem(props) {
           />
         </div>
       </div>
+      <Collapse isOpened={!collapse}>
       <div className={`LegendItemContent`}>
         {renderContent(type)}
       </div>
+      </Collapse>
     </div>
   )
 }

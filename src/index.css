@@ -16,3 +16,11 @@
   border-top-width: 9px !important;
   filter: drop-shadow(0 1px 0 rgba(26, 28, 34, 0.05));
 }
+
+/* TODO: Use tailwind extend/apply ? */
+.ReactCollapse--collapse {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  /* transition: height 500ms; */
+}
