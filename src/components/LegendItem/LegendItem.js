@@ -2,6 +2,7 @@ import Icon from '../Icon/Icon'
 import Button from '../Button/Button'
 import LegendGradient from '../LegendGradient/LegendGradient'
 import LegendChoropleth from '../LegendChoropleth/LegendChoropleth'
+import LegendBasic from '../LegendBasic/LegendBasic'
 
 function LegendItem(props) {
   const {
@@ -24,6 +25,8 @@ function LegendItem(props) {
         return <LegendGradient items={items} />
       case 'choropleth':
         return <LegendChoropleth items={items} />
+      case 'basic':
+        return <LegendBasic items={items} />
       default:
         return null
     }
