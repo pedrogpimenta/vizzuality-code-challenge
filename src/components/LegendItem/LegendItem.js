@@ -33,12 +33,16 @@ function LegendItem(props) {
   }
 
   return (
-    <div className="LegendItem bg-white">
+    <div className="LegendItem bg-white border border-black border-opacity-10 border-b-0 last:border-b">
       <div className="LegendItemHeader flex pt-3.5 px-3 pb-3">
-        <div className="LegendItemDrag flex-none">
-          a
+        <div className="LegendItemDrag flex-none flex items-center mr-1">
+          <Button 
+            id={'visibility'}
+            icon={<Icon icon={'drag'} />}
+            // onClick={() => onChangeOrder()}
+          />
         </div>
-        <div className="LegendItemTitle flex-auto truncate">
+        <div className="LegendItemTitle flex-auto flex items-center text-sm text-gray-650 font-semibold truncate">
           {name}
         </div>
         <div className="LegendItemActions flex-none flex items-center gap-x-2">
@@ -59,7 +63,7 @@ function LegendItem(props) {
               icon={'arrow-down'}
               transform={collapse ? 'rotate-180' : ''}
             />}
-            dataTip={collapse ? 'Collapse' : 'Expand'}
+            dataTip={collapse ? 'Expand' : 'Collapse'}
             onClick={() => onChangeCollapse(id)}
           />
         </div>

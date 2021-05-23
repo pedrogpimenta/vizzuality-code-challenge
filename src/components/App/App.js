@@ -84,7 +84,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="App w-screen h-screen p-10 bg-blue-100">
+      <div className="App w-full min-h-screen p-10 bg-blue-100">
         {this.state.legendItems.length > 0 &&
           <Legend
             items={this.state.legendItems}
