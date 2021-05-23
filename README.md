@@ -1,70 +1,15 @@
-# Getting Started with Create React App
+# Pedro's Vizzuality front-end code challenge
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Hi there! I'm adding some notes, so you don't need to guess :)
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `yarn start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- I've used a regular create-react-app to build the project (so just `yarn install && yarn start` or `npm install && npm start`).
+- I used a React state only on the parent component (App.js). I didn't made collapse/visibility inside each components because there's a need to pass those values globally (to show or hide info on the supposed map). Due to the scope of the project I think it would be overkill to add a library like react-redux.
+- I have used TailwindCSS for the majority of styles because you mentioned it and I'm used to it.
+- I have "standardized" margins, paddings and font styles as I see fit. In the real world, I'd consult with the designers first.
+- The modal is super basic. There was no design and I almost forgot about it :)
+- Of the optional tasks, I made 1 and left 2 due to time constraints:
+  - Didn't add the possibility to add text to an item
+  - Made the items sortable
+  - Didn't build the timeline component
+- I have used some external libraries for the modal, dragging items, tooltips and collapse animations. They are tested and apparently very flexible. Most were for scope/time reasons, but react-draggable I think I'd use it anyways, because it's a very solid library for a very complex interaction.
+- I built a small&dumb "Icon" component to simulate a library. In the real world, depending on the project I would outright use a library or build a more robust one with the needed icons.
