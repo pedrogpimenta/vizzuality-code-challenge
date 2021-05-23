@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ------------------- */
+/* Style react-tooltip */
+/* ------------------- */
 .Button__Tooltip {
   background: #FFFFFF !important;
   border: 1px solid rgba(26, 28, 34, 0.1) !important;
@@ -31,10 +34,12 @@
   filter: drop-shadow(0 -1px 0 rgba(26, 28, 34, 0.08));
 }
 
+/* -------------------- */
+/* Style react-collapse */
+/* -------------------- */
 /* TODO: Use tailwind extend/apply ? */
 .ReactCollapse--collapse {
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
-  /* transition: height 500ms; */
 }

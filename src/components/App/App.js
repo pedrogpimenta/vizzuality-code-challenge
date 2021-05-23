@@ -61,7 +61,6 @@ class App extends React.Component {
   }
 
   onChangeInfo(itemId) {
-    console.log('change info', itemId)
     this.setState({
       isModalOpen: itemId,
       modalContent: this.state.legendItems.find((item) => item.id === itemId)?.description,
@@ -92,7 +91,6 @@ class App extends React.Component {
         if (response.ok) {
           return response.json()
         } else {
-          // TODO: handle error
           console.log(`Oops! There as an error ${response.status}: ${response.statusText}`)
         }
       })
@@ -100,7 +98,7 @@ class App extends React.Component {
         this.setLegendItems(data)
       })
       .catch((error) => {
-        console.log('wat', error)
+        console.log('Error:', error)
       })
   }
 
