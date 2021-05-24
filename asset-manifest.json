@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/vizzuality-challenge/static/css/main.7445c1c8.chunk.css",
+    "main.js": "/vizzuality-challenge/static/js/main.bf76d32c.chunk.js",
+    "main.js.map": "/vizzuality-challenge/static/js/main.bf76d32c.chunk.js.map",
+    "runtime-main.js": "/vizzuality-challenge/static/js/runtime-main.e704631f.js",
+    "runtime-main.js.map": "/vizzuality-challenge/static/js/runtime-main.e704631f.js.map",
+    "static/js/2.6c3f1dfd.chunk.js": "/vizzuality-challenge/static/js/2.6c3f1dfd.chunk.js",
+    "static/js/2.6c3f1dfd.chunk.js.map": "/vizzuality-challenge/static/js/2.6c3f1dfd.chunk.js.map",
+    "static/js/3.c745842f.chunk.js": "/vizzuality-challenge/static/js/3.c745842f.chunk.js",
+    "static/js/3.c745842f.chunk.js.map": "/vizzuality-challenge/static/js/3.c745842f.chunk.js.map",
+    "index.html": "/vizzuality-challenge/index.html",
+    "static/css/main.7445c1c8.chunk.css.map": "/vizzuality-challenge/static/css/main.7445c1c8.chunk.css.map",
+    "static/js/2.6c3f1dfd.chunk.js.LICENSE.txt": "/vizzuality-challenge/static/js/2.6c3f1dfd.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e704631f.js",
+    "static/js/2.6c3f1dfd.chunk.js",
+    "static/css/main.7445c1c8.chunk.css",
+    "static/js/main.bf76d32c.chunk.js"
+  ]
+}
