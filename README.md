@@ -1,6 +1,7 @@
 # Pedro's Vizzuality front-end code challenge
 
 Hi there!
+You can check the live project here: [https://pedrogpimenta.github.io/vizzuality-code-challenge/](https://pedrogpimenta.github.io/vizzuality-code-challenge/).
 
 - I've used a regular `create-react-app` to build the project (so just `yarn install && yarn start` or `npm install && npm start`).
 - I used the App component as the main wrapper and Legend as an independent component so that it could possibly be included wherever it is needed.
